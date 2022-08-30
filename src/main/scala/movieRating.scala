@@ -9,7 +9,7 @@ object movieRating extends App {
 
   // Use countByValue() only when there is no more operation pending. Since countByValue()
   // is an action the final result is on local and it is not an RDD
-  // therefore no parellism is achived if we perform more operations after using countByValue()
+  // therefore no parellism is achieved if we perform more operations after using countByValue()
 
   val results = mappedInput.countByValue() // countByValue() is an action just like collect
   results.foreach(println)
