@@ -21,3 +21,4 @@
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
 [0m[[0m[0mdebug[0m] [0m[0mUnhandled notification received: $/setTraceNotification: JsonRpcNotificationMessage(2.0, $/setTraceNotification, {"value":"off"})[0m
 [0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
+[0m[[0m[0mdebug[0m] [0m[0mUnhandled request received: shutdown: JsonRpcRequestMessage(2.0, ♨2, shutdown, null})[0m

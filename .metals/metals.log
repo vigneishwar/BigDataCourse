@@ -53,3 +53,72 @@ WARNING: Unmatched cancel notification for request id 14
 2022.08.30 13:26:53 INFO  skipping build import with status 'Installed'
 Aug. 30, 2022 1:28:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+2022.08.30 13:44:00 INFO  shutting down Metals
+2022.08.30 13:44:00 INFO  Shut down connection with build server.
+2022.08.30 13:44:00 INFO  Shut down connection with build server.
+2022.08.30 13:44:18 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/.metals/lsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.08.30 13:44:18 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/.metals/lsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.08.30 13:44:19 INFO  logging to file /Users/vigneishn/Desktop/BigDataCourse/.metals/metals.log
+2022.08.30 13:44:19 INFO  Started: Metals version 0.11.8 in workspace '/Users/vigneishn/Desktop/BigDataCourse' for client Visual Studio Code 1.70.2.
+2022.08.30 13:44:20 INFO  logging to file /Users/vigneishn/Desktop/BigDataCourse/.metals/metals.log
+2022.08.30 13:44:20 INFO  Started: Metals version 0.11.8 in workspace '/Users/vigneishn/Desktop/BigDataCourse' for client Visual Studio Code 1.70.2.
+2022.08.30 13:44:21 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.08.30 13:44:26 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.08.30 13:44:26 ERROR org.h2.jdbc.JdbcSQLNonTransientConnectionException: Error opening database: "Lock file recently modified" [8000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:504)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.store.FileLock.getExceptionFatal(FileLock.java:429)
+	at org.h2.store.FileLock.waitUntilOld(FileLock.java:301)
+	at org.h2.store.FileLock.lockFile(FileLock.java:318)
+	at org.h2.store.FileLock.lock(FileLock.java:110)
+	at org.h2.engine.Database.<init>(Database.java:315)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:145)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:856)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.lang.Thread.run(Thread.java:829)
+
+2022.08.30 13:44:26 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.08.30 13:44:27 INFO  time: initialize in 7.46s
+2022.08.30 13:44:31 INFO  time: initialize in 11s
+2022.08.30 13:44:31 INFO  Attempting to connect to the build server...
+2022.08.30 13:44:31 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home defined at /Users/vigneishn/.bloop/bloop.json
+2022.08.30 13:44:32 INFO  skipping build import with status 'Installed'
+2022.08.30 13:44:31 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/.metals/bsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.30 13:44:31 INFO  Attempting to connect to the build server...
+2022.08.30 13:44:31 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home defined at /Users/vigneishn/.bloop/bloop.json
+2022.08.30 13:44:31 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/project/.metals/bsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.30 13:44:31 INFO  time: Connected to build server in 0.61s
+2022.08.30 13:44:31 INFO  Connected to Build server: Bloop v1.5.3
+2022.08.30 13:44:32 INFO  time: Imported build in 0.21s
+2022.08.30 13:44:36 INFO  Attempting to connect to the build server...
+2022.08.30 13:44:36 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home defined at /Users/vigneishn/.bloop/bloop.json
+2022.08.30 13:44:36 INFO  skipping build import with status 'Installed'
+2022.08.30 13:44:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/.metals/bsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.30 13:44:36 INFO  Attempting to connect to the build server...
+2022.08.30 13:44:36 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home defined at /Users/vigneishn/.bloop/bloop.json
+2022.08.30 13:44:36 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/project/.metals/bsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.30 13:44:36 INFO  time: Connected to build server in 0.69s
+2022.08.30 13:44:36 INFO  Connected to Build server: Bloop v1.5.3
+2022.08.30 13:44:37 INFO  time: Imported build in 0.19s
+2022.08.30 13:44:41 INFO  time: indexed workspace in 8.96s
+2022.08.30 13:44:46 INFO  time: indexed workspace in 8.82s
+Aug. 30, 2022 1:45:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
