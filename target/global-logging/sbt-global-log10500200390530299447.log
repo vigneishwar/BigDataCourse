@@ -1,0 +1,10 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(collectAnalyses, None, Some(CommandSource(network-1)))[0m
+[0m[[0m[0mdebug[0m] [0m[0munmatched Processing event for requestId None: None[0m
+[0m[[0m[0mdebug[0m] [0m[0mUnhandled notification received: initialized: JsonRpcNotificationMessage(2.0, initialized, {})[0m
+[0m[[0m[0mdebug[0m] [0m[0mUnhandled notification received: textDocument/didOpen: JsonRpcNotificationMessage(2.0, textDocument/didOpen, {"textDocument":{"uri":"file:///Users/vigneishn/Desktop/BigDataCourse/src/main/scala/movieRating.scala","languageId":"scala","version":1,"text":"import org.apache.spark.SparkContext\nimport org.apache.log4j.Logger\nimport org.apache.log4j.Level\nobject movieRating extends App {\n  Logger.getLogger(\"org\").setLevel(Level.ERROR)\n  val sc = new SparkContext(\"local[*]\",\"movierating\")\n  val input = sc.textFile(\"/Users/vigneishn/Downloads/moviedata-201008-180523.csv\")\n  val mappedInput = input.map(x => x.split(\"\\t\")(2))\n\n  // Use countByValue() only when there is no more operation pending. Since countByValue()\n  // is an action the final result is on local and it is not an RDD\n  // therefore no parellism is achived if we perform more operations after using countByValue()\n\n  val results = mappedInput.countByValue() // countByValue() is an action just like collect\n  results.foreach(println)\n//  val groupedRatings = mappedInput.map(x => (x,1))\n//  val countedRatings = groupedRatings.reduceByKey((x,y) => x+y)\n//  val results = countedRatings.collect\n//  results.foreach(println)\n\n}\n"}})[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / collectAnalyses[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0manalysis location (/Users/vigneishn/Desktop/BigDataCourse/target/scala-2.13/zinc/inc_compile_2.13.zip,true)[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 1 s, completed 30 Aug. 2022, 1:47:42 pm[0m
+[0m[[0m[0mdebug[0m] [0m[0munmatched Done event for requestId None: None[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
