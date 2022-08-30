@@ -10,5 +10,5 @@ object CustOrder extends App {
   val sortedTotal = summedValues.sortBy(x => x._2)
   val results = sortedTotal.collect
   results.foreach(println)
-
+  
 }

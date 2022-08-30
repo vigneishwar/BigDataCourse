@@ -1,0 +1,55 @@
+2022.08.30 13:13:04 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/.metals/lsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.08.30 13:13:05 INFO  logging to file /Users/vigneishn/Desktop/BigDataCourse/.metals/metals.log
+2022.08.30 13:13:05 INFO  Started: Metals version 0.11.8 in workspace '/Users/vigneishn/Desktop/BigDataCourse' for client Visual Studio Code 1.70.2.
+2022.08.30 13:13:06 WARN  Flyway upgrade recommended: H2 2.1.214 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.08.30 13:13:06 INFO  time: initialize in 1.69s
+2022.08.30 13:13:11 WARN  Build server is not auto-connectable.
+2022.08.30 13:13:11 WARN  no build target for: /Users/vigneishn/Desktop/BigDataCourse/src/main/scala/movieRating.scala
+2022.08.30 13:13:15 INFO  running '/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/bd/9_cl16d93y52t_y3rnbg607m0000gn/T/metals8365395978541242227/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2022.08.30 13:13:15 WARN  no build target for: /Users/vigneishn/Desktop/BigDataCourse/project/metals.sbt
+2022.08.30 13:13:15 WARN  no build target for: /Users/vigneishn/Desktop/BigDataCourse/project/project/metals.sbt
+2022.08.30 13:13:16 INFO  skipping build import with status 'Started'
+2022.08.30 13:13:18 INFO  [info] welcome to sbt 1.7.1 (Amazon.com Inc. Java 11.0.16.1)
+2022.08.30 13:13:21 INFO  [info] loading global plugins from /Users/vigneishn/.sbt/1.0/plugins
+2022.08.30 13:13:26 INFO  [info] loading settings for project bigdatacourse-build-build from metals.sbt ...
+2022.08.30 13:13:26 INFO  [info] loading project definition from /Users/vigneishn/Desktop/BigDataCourse/project/project
+2022.08.30 13:13:31 INFO  no build target found for /Users/vigneishn/Desktop/BigDataCourse/src/main/scala/movieRating.scala. Using presentation compiler with project's scala-library version: 3.1.3
+2022.08.30 13:13:33 INFO  [info] loading settings for project bigdatacourse-build from metals.sbt ...
+2022.08.30 13:13:33 INFO  [info] loading project definition from /Users/vigneishn/Desktop/BigDataCourse/project
+2022.08.30 13:13:34 INFO  time: code lens generation in 18s
+2022.08.30 13:13:34 INFO  time: code lens generation in 22s
+2022.08.30 13:13:46 INFO  [success] Generated .bloop/bigdatacourse-build.json
+2022.08.30 13:13:46 INFO  [success] Total time: 13 s, completed 30 Aug. 2022, 1:13:46 pm
+2022.08.30 13:13:51 INFO  [info] loading settings for project root from build.sbt ...
+2022.08.30 13:13:51 INFO  [info] set current project to BigData (in build file:/Users/vigneishn/Desktop/BigDataCourse/)
+2022.08.30 13:13:53 INFO  [success] Generated .bloop/root.json
+2022.08.30 13:13:53 INFO  [success] Generated .bloop/root-test.json
+2022.08.30 13:13:53 INFO  [success] Total time: 1 s, completed 30 Aug. 2022, 1:13:53 pm
+2022.08.30 13:13:53 INFO  time: ran 'sbt bloopInstall' in 37s
+2022.08.30 13:13:53 INFO  Attempting to connect to the build server...
+2022.08.30 13:13:53 INFO  Setting up current java home /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home in /Users/vigneishn/.bloop/bloop.json
+2022.08.30 13:14:03 WARN  no build target for: /Users/vigneishn/Desktop/BigDataCourse/src/main/scala/WordCount.scala
+2022.08.30 13:14:06 WARN  no build target for: /Users/vigneishn/Desktop/BigDataCourse/src/main/scala/CustOrder.scala
+Aug. 30, 2022 1:14:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14
+2022.08.30 13:14:54 WARN  no build target for: /Users/vigneishn/Desktop/BigDataCourse/build.sbt
+2022.08.30 13:15:05 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/.metals/bsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.30 13:15:19 INFO  Attempting to connect to the build server...
+2022.08.30 13:15:19 INFO  Bloop uses /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home defined at /Users/vigneishn/.bloop/bloop.json
+2022.08.30 13:15:19 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/vigneishn/Desktop/BigDataCourse/project/.metals/bsp.trace.json or /Users/vigneishn/Library/Caches/org.scalameta.metals/bsp.trace.json
+2022.08.30 13:15:35 INFO  time: Connected to build server in 1m42s
+2022.08.30 13:15:35 INFO  Connected to Build server: Bloop v1.5.3
+2022.08.30 13:15:35 INFO  time: Imported build in 0.26s
+2022.08.30 13:16:01 INFO  time: indexed workspace in 26s
+2022.08.30 13:16:02 INFO  compiling root (3 scala sources)
+2022.08.30 13:16:29 WARN  2 deprecations (since 2.13.3); re-run with -deprecation for details
+2022.08.30 13:16:29 INFO  time: compiled root in 27s
+2022.08.30 13:18:13 INFO  time: code lens generation in 1.52s
+2022.08.30 13:18:13 INFO  time: code lens generation in 3.31s
+2022.08.30 13:26:47 INFO  skipping build import with status 'Installed'
+2022.08.30 13:26:49 INFO  skipping build import with status 'Installed'
+2022.08.30 13:26:50 INFO  skipping build import with status 'Installed'
+2022.08.30 13:26:51 INFO  skipping build import with status 'Installed'
+2022.08.30 13:26:53 INFO  skipping build import with status 'Installed'
+Aug. 30, 2022 1:28:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace

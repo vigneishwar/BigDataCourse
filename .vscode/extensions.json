@@ -1,0 +1,5 @@
+{
+    "recommendations": [
+        "lightbend.vscode-sbt-scala"
+    ]
+}
