@@ -5,11 +5,11 @@ import org.apache.log4j.Level
 object averageConnection extends App {
 
   // creating a named function instead of anonymous function
-  def parseLine(line: String) = {
+  def parseLine(line: String): (Int, Int) = {
     val fields = line.split("::")
     val age = fields(2).toInt
     val numConnections = fields(3).toInt
-    (age,numConnections)
+    return (age,numConnections)
   }
   Logger.getLogger("org").setLevel(Level.ERROR)
   val sc = new SparkContext("local[*]","movierating")
