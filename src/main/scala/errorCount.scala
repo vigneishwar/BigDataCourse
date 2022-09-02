@@ -7,6 +7,9 @@ object errorCount extends App {
   val sc = new SparkContext("local[*]","errorcount")
   // creating a list locally and distributiing it as RDD using parallize method
   val myList = List("WARN: xxxxx", "ERROR: xxxxx", "ERROR: xxxxx", "ERROR: xxxxx", "ERROR: xxxxx", "ERROR: xxxxx")
+
+  // use sc.defaultParallelism to check the parallelism level and
+  // rdd.getNumPartitions to check the number of partitions
   val originalLogsRDD = sc.parallelize(myList)
   val mappedColumns = originalLogsRDD.map(x => {
     val columns = x.split(";")
