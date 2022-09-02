@@ -6,7 +6,7 @@
 
 
 # Repartition 
-#####===================
+
 
 we have 500 mb file in hdfs and we have a spark cluster of 20 machines.
 
@@ -17,3 +17,14 @@ then the number of partitions is 4 and only 4 machines are being used.
 we can increase the number of partitions to use more resources.
 
 `rdd.repartition(10)`
+
+we can also decrease the number of partitions using repartition 
+
+it is a wide transformation as shuffling is involved 
+
+# Coalesce 
+
+it can only decrease the number of partitions and cannot increase
+
+# To decrease the partitions coalesce is preferred as it minimize the shuffling 
+
