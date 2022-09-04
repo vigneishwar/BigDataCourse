@@ -14,7 +14,7 @@ object orderDF extends App {
 
   val input = spark.read
     .option("header", true)
-    .option("inferSchema", true)
+    .option("inferSchema", true) // never use inferSchema in production
     .csv("/Users/vigneishn/Downloads/orders-201019-002101.csv")
 
   input.show()
