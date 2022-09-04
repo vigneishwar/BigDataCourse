@@ -4,7 +4,7 @@ import org.apache.spark.sql.SparkSession
 object dataframeExample extends  App {
 
   val sparkConf = new SparkConf()
-  sparkConf.set("spark.conf.name", "dataframe example")
+  sparkConf.set("spark.app.name", "dataframe example")
   sparkConf.set("spark.master", "local[2]")
 
   val spark = SparkSession.builder()
