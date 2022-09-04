@@ -2,7 +2,6 @@ import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
-
 object orderDF extends App {
   Logger.getLogger("org").setLevel(Level.ERROR)
 
@@ -29,5 +28,4 @@ object orderDF extends App {
   groupedOrders.show()
   scala.io.StdIn.readLine()
   spark.stop()
-
 }

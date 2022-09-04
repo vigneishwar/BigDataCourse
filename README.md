@@ -28,3 +28,10 @@ it can only decrease the number of partitions and cannot increase
 
 # To decrease the partitions coalesce is preferred as it minimize the shuffling 
 
+
+# Structured API's
+
+in spark dataframes drivers will convert the high level code to low level code using the driver 
+
+spark compiler will convert the high level code to low level code and then passes it to the executors 
+
