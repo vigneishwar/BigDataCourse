@@ -1,9 +1,13 @@
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{Dataset, Row, SparkSession}
 
+import java.sql.Timestamp
 
-object orderDF extends App {
+case class OrdersData (order_id: Int, order_date: Timestamp, order_customer_id: Int, order_status: String)
+
+object dataframeDatasetConversion extends App{
+
   Logger.getLogger("org").setLevel(Level.ERROR)
 
   val sparkConf = new SparkConf()
@@ -14,20 +18,14 @@ object orderDF extends App {
     .config(sparkConf)
     .getOrCreate()
 
-  val input = spark.read
+  val input: Dataset[Row] = spark.read
     .option("header", true)
     .option("inferSchema", true) // never use inferSchema in production
     .csv("/Users/vigneishn/Downloads/orders-201019-002101.csv")
 
-  val groupedOrders = input
-    .repartition(4)
-    .where("order_customer_id > 10000")
-    .select("order_id", "order_customer_id")
-    .groupBy("order_customer_id")
-    .count()
+  import spark.implicits._
+  val ordersDs = input.as[OrdersData]
+  ordersDs.filter(x => x.order_id<1000)
 
-  groupedOrders.show()
-  scala.io.StdIn.readLine()
-  spark.stop()
 
 }
