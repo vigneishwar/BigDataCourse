@@ -35,3 +35,9 @@ in spark dataframes drivers will convert the high level code to low level code u
 
 spark compiler will convert the high level code to low level code and then passes it to the executors 
 
+
+# Read modes while loading data 
+
+1. PERMISSIVE -(default mode) -> set all fields to null when there are nulls 
+2. DROPMALFORMED -> it will ignore the null
+3. FAILFAST -> raise an exception

@@ -27,6 +27,7 @@ object orderDF extends App {
     .format("json")
     .option("header", true)
     .option("path", "/Users/vigneishn/Downloads/players-201019-002101.json") // no need of inferSchema as JSON files infer the schema by default
+    .option("mode", "FAILFAST")
     .load
 //
 //  val groupedOrders = input
