@@ -22,15 +22,22 @@ object orderDF extends App {
 //    .load
 //    .csv("/Users/vigneishn/Downloads/orders-201019-002101.csv")
 
+//
+//  val input = spark.read
+//    .format("json")
+//    .option("header", true)
+//    .option("path", "/Users/vigneishn/Downloads/players-201019-002101.json") // no need of inferSchema as JSON files infer the schema by default
+//    .option("mode", "FAILFAST")
+//    .load
 
   val input = spark.read
-    .format("json")
-    .option("header", true)
-    .option("path", "/Users/vigneishn/Downloads/players-201019-002101.json") // no need of inferSchema as JSON files infer the schema by default
-    .option("mode", "FAILFAST")
-    .load
-//
-//  val groupedOrders = input
+      .option("path", "/Users/vigneishn/Downloads/users-201019-002101.parquet") // by default spark uses parquet format
+      .load
+
+
+
+
+  //  val groupedOrders = input
 //    .repartition(4)
 //    .where("order_customer_id > 10000")
 //    .select("order_id", "order_customer_id")
