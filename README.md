@@ -41,3 +41,11 @@ spark compiler will convert the high level code to low level code and then passe
 1. PERMISSIVE -(default mode) -> set all fields to null when there are nulls 
 2. DROPMALFORMED -> it will ignore the null
 3. FAILFAST -> raise an exception
+
+# Save modes (.write)
+
+1. append -> putting the file in the exisiting folder
+2. overwrite -> delete the exisiting folder and create a new one 
+3. errorIfExists -> throw error if folder already exists
+4. ignore -> if folder exists already it ignores it
+

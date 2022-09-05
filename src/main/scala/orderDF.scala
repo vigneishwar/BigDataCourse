@@ -1,6 +1,6 @@
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{SaveMode, SparkSession}
 
 
 object orderDF extends App {
@@ -35,6 +35,12 @@ object orderDF extends App {
       .load
 
 
+// to save the file
+//  input.write
+//    .format("csv") // by default it is parquet without .format()
+//    .mode(SaveMode.Overwrite)
+//    .option("path", "/Users/vigneishn/Desktop/newfolder1")
+//    .save()
 
 
   //  val groupedOrders = input
