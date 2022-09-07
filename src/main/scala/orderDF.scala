@@ -44,9 +44,16 @@ object orderDF extends App {
 
   input.createOrReplaceTempView("orders") // spark sql
 
-  val resultDf = spark.sql("select order_status, count(*) as status_count from orders group by order_status order by status_count")
+//  val resultDf = spark.sql("select order_status, count(*) as status_count from orders group by order_status order by status_count")
+//
+//  resultDf.show()
+
+  val resultDf = spark.sql("select order_customer_id, count(*) as total_orders from orders where order_status ='CLOSED'" +
+  "group by order_customer_id order by total_orders desc")
 
   resultDf.show()
+
+
 
 // to save the file
 //  input.write
