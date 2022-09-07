@@ -12,6 +12,7 @@ object orderDF extends App {
 
   val spark = SparkSession.builder()
     .config(sparkConf)
+    .enableHiveSupport()
     .getOrCreate()
 //
 //  val input = spark.read
@@ -42,16 +43,28 @@ object orderDF extends App {
       .option("path", "/Users/vigneishn/Downloads/orders-201025-223502 (1).csv")
       .load()
 
+  spark.sql("create database if not exists retail")
+
   input.createOrReplaceTempView("orders") // spark sql
 
 //  val resultDf = spark.sql("select order_status, count(*) as status_count from orders group by order_status order by status_count")
 //
 //  resultDf.show()
+//
+//  val resultDf = spark.sql("select order_customer_id, count(*) as total_orders from orders where order_status ='CLOSED'" +
+//  "group by order_customer_id order by total_orders desc")
+//
+//  resultDf.show()
 
-  val resultDf = spark.sql("select order_customer_id, count(*) as total_orders from orders where order_status ='CLOSED'" +
-  "group by order_customer_id order by total_orders desc")
+  // to save the file in the form of table
+    input.write
+      .format("csv") // by default it is parquet without .format()
+      .mode(SaveMode.Overwrite)
+      .saveAsTable("retail.orders")
 
-  resultDf.show()
+  spark.catalog.listTables("retail").show()
+
+
 
 
 

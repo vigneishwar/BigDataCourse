@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Sep 07 11:18:13 AEST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0183-1586-b408-00000c671a00 
+on database directory /Users/vigneishn/Desktop/BigDataCourse/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@2c13da15 
+Loaded from file:/Users/vigneishn/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Amazon.com Inc.
+java.runtime.version=11.0.16.1+9-LTS
+user.dir=/Users/vigneishn/Desktop/BigDataCourse
+os.name=Mac OS X
+os.arch=x86_64
+os.version=12.5.1
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
