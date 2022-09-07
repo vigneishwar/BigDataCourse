@@ -29,11 +29,24 @@ object orderDF extends App {
 //    .option("path", "/Users/vigneishn/Downloads/players-201019-002101.json") // no need of inferSchema as JSON files infer the schema by default
 //    .option("mode", "FAILFAST")
 //    .load
+//
+//  val input = spark.read
+//      .option("path", "/Users/vigneishn/Downloads/users-201019-002101.parquet") // by default spark uses parquet format
+//      .load
 
-  val input = spark.read
-      .option("path", "/Users/vigneishn/Downloads/users-201019-002101.parquet") // by default spark uses parquet format
-      .load
 
+    val input = spark.read
+      .format("csv")
+      .option("header", true)
+      .option("inferSchema", true)
+      .option("path", "/Users/vigneishn/Downloads/orders-201025-223502 (1).csv")
+      .load()
+
+  input.createOrReplaceTempView("orders") // spark sql
+
+  val resultDf = spark.sql("select order_status, count(*) as status_count from orders group by order_status order by status_count")
+
+  resultDf.show()
 
 // to save the file
 //  input.write
@@ -50,8 +63,8 @@ object orderDF extends App {
 //    .groupBy("order_customer_id")
 //    .count()
 
-  input.show()
-  scala.io.StdIn.readLine()
+  // input.show()
+  //scala.io.StdIn.readLine()
   spark.stop()
 
 }
