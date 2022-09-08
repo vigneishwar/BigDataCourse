@@ -1,6 +1,6 @@
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.functions.{col, udf}
+import org.apache.spark.sql.functions.{col, expr, udf}
 import org.apache.spark.sql.{SaveMode, SparkSession}
 
 
@@ -27,10 +27,15 @@ object udfExample extends App {
 
   val namedInput = input.toDF("name", "age", "city")
 
-  val parseAgeFunc = udf(ageCheck(_:Int): String)
-  val adultCol = namedInput.withColumn("adult", parseAgeFunc(col("age"))) // use .withColumn to add a new column
-  adultCol.printSchema()
-  adultCol.show()
+//  val parseAgeFunc = udf(ageCheck(_:Int): String)
+//  val adultCol = namedInput.withColumn("adult", parseAgeFunc(col("age"))) // use .withColumn to add a new column
+//  adultCol.printSchema()
+//  adultCol.show()
+
+  // using spark udf function
+  spark.udf.register("parseAgeFunc", ageCheck(_:Int): String)
+  val udfExample = namedInput.withColumn("adult", expr("parseAgeFunc(age)"))
+  udfExample.show()
 
   spark.stop()
 }
