@@ -40,5 +40,11 @@ object orderAggregation extends App {
     "count(Distinct(InvoiceNo)) as CountDistinct"
   ).show()
 
+  // aggregation using spark sql
+
+  input.createOrReplaceTempView("sales")
+
+  spark.sql("select count(*), sum(Quantity), avg(UnitPrice), count(distinct(InvoiceNo)) from sales").show()
+
   spark.stop()
 }
