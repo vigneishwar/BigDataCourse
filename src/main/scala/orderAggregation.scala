@@ -31,5 +31,14 @@ object orderAggregation extends App {
     countDistinct("InvoiceNo").as("DistinctInvoices")
   ).show()
 
+  // aggregation using string expression
+
+  input.selectExpr(
+    "count(*) as RowCount", // count(*) counts the null values also
+    "sum(Quantity) as TotalQuantity",
+    "avg(UnitPrice) as AvgPrice",
+    "count(Distinct(InvoiceNo)) as CountDistinct"
+  ).show()
+
   spark.stop()
 }
