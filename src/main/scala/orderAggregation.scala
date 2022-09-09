@@ -23,28 +23,43 @@ object orderAggregation extends App {
     .load()
 
 
-  // aggregation using column object expression
-  input.select(
-    count("*").as("row_count"),
-    sum("Quantity").as("TotalQuantity"),
-    avg("UnitPrice").as("AvgPrice"),
-    countDistinct("InvoiceNo").as("DistinctInvoices")
-  ).show()
+  // grouping aggregation
+  // grouping based on invoice number and country
+  // calculate total quantity for each group
+  // calculate sum of invoice value = quantity * unit price
 
-  // aggregation using string expression
+  // column object expression
 
-  input.selectExpr(
-    "count(*) as RowCount", // count(*) counts the null values also
-    "sum(Quantity) as TotalQuantity",
-    "avg(UnitPrice) as AvgPrice",
-    "count(Distinct(InvoiceNo)) as CountDistinct"
-  ).show()
+  val summaryDf = input.groupBy("Country", "InvoiceNo")
+    .agg(sum("Quantity").as("Total Quantity"),
+      sum(expr("Quantity * UnitPrice")).as("Invoice Value"))
 
-  // aggregation using spark sql
+  summaryDf.show()
 
-  input.createOrReplaceTempView("sales")
 
-  spark.sql("select count(*), sum(Quantity), avg(UnitPrice), count(distinct(InvoiceNo)) from sales").show()
+  //  // simple aggregation
+  //  // aggregation using column object expression
+  //  input.select(
+  //    count("*").as("row_count"),
+  //    sum("Quantity").as("TotalQuantity"),
+  //    avg("UnitPrice").as("AvgPrice"),
+  //    countDistinct("InvoiceNo").as("DistinctInvoices")
+  //  ).show()
+  //
+  //  // aggregation using string expression
+  //
+  //  input.selectExpr(
+  //    "count(*) as RowCount", // count(*) counts the null values also
+  //    "sum(Quantity) as TotalQuantity",
+  //    "avg(UnitPrice) as AvgPrice",
+  //    "count(Distinct(InvoiceNo)) as CountDistinct"
+  //  ).show()
+  //
+  //  // aggregation using spark sql
+  //
+  //  input.createOrReplaceTempView("sales")
+  //
+  //  spark.sql("select count(*), sum(Quantity), avg(UnitPrice), count(distinct(InvoiceNo)) from sales").show()
 
   spark.stop()
 }
