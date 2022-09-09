@@ -29,20 +29,26 @@ object orderAggregation extends App {
   // calculate sum of invoice value = quantity * unit price
 
   // column object expression
-//
-//  val summaryDf = input.groupBy("Country", "InvoiceNo")
-//    .agg(sum("Quantity").as("Total Quantity"),
-//      sum(expr("Quantity * UnitPrice")).as("Invoice Value")
-//    )
+  //
+  //  val summaryDf = input.groupBy("Country", "InvoiceNo")
+  //    .agg(sum("Quantity").as("Total Quantity"),
+  //      sum(expr("Quantity * UnitPrice")).as("Invoice Value")
+  //    )
 
   // using string expression
+  //
+  //  val summaryDf1 = input.groupBy("Country", "InvoiceNo")
+  //    .agg(expr("sum(Quantity) as TotalQuantity"),
+  //      expr("sum(Quantity * UnitPrice) as InvoiceValue")
+  //    )
 
-  val summaryDf1 = input.groupBy("Country", "InvoiceNo")
-    .agg(expr("sum(Quantity) as TotalQuantity"),
-      expr("sum(Quantity * UnitPrice) as InvoiceValue")
-    )
+  // using spark sql
 
-  summaryDf1.show()
+  input.createOrReplaceTempView("sales")
+
+  val summaryDf2 = spark.sql("select Country, InvoiceNo, sum(Quantity) as TotalQuantity, sum(Quantity * UnitPrice) as InvoiceValue from sales group by Country, InvoiceNo")
+
+  summaryDf2.show()
 
 
   //  // simple aggregation
