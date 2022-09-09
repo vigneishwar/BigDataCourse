@@ -29,12 +29,20 @@ object orderAggregation extends App {
   // calculate sum of invoice value = quantity * unit price
 
   // column object expression
+//
+//  val summaryDf = input.groupBy("Country", "InvoiceNo")
+//    .agg(sum("Quantity").as("Total Quantity"),
+//      sum(expr("Quantity * UnitPrice")).as("Invoice Value")
+//    )
 
-  val summaryDf = input.groupBy("Country", "InvoiceNo")
-    .agg(sum("Quantity").as("Total Quantity"),
-      sum(expr("Quantity * UnitPrice")).as("Invoice Value"))
+  // using string expression
 
-  summaryDf.show()
+  val summaryDf1 = input.groupBy("Country", "InvoiceNo")
+    .agg(expr("sum(Quantity) as TotalQuantity"),
+      expr("sum(Quantity * UnitPrice) as InvoiceValue")
+    )
+
+  summaryDf1.show()
 
 
   //  // simple aggregation
