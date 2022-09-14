@@ -1,4 +1,4 @@
-[debug] [bigdatacourse-build] Classpath dependencies List()
-[debug] [bigdatacourse-build] Dependencies from configurations List()
-[debug] Bloop wrote the configuration of project 'bigdatacourse-build' to '/Users/vigneishn/Desktop/BigDataCourse/project/.bloop/bigdatacourse-build.json'
-[success] Generated .bloop/bigdatacourse-build.json
+[0m[[0m[0mdebug[0m] [0m[0m[bigdatacourse-build] Classpath dependencies List()[0m
+[0m[[0m[0mdebug[0m] [0m[0m[bigdatacourse-build] Dependencies from configurations List()[0m
+[0m[[0m[0mdebug[0m] [0m[0mBloop wrote the configuration of project 'bigdatacourse-build' to '/Users/vigneishn/Desktop/BigDataCourse/project/.bloop/bigdatacourse-build.json'[0m
+[0m[[0m[32msuccess[0m] [0m[0mGenerated .bloop/bigdatacourse-build.json[0m

@@ -60,7 +60,7 @@ object orderAggregation extends App {
   //    countDistinct("InvoiceNo").as("DistinctInvoices")
   //  ).show()
   //
-  //  // aggregation using string expression
+  //   aggregation using string expression
   //
   //  input.selectExpr(
   //    "count(*) as RowCount", // count(*) counts the null values also
