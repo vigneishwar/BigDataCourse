@@ -25,7 +25,8 @@ object twoDatasetJoin extends App{
 
 
 
-
+  // to fix ambiguos cols rename the col name before joining using .withColumnRenamed()
+  val ordersNew = orderDf.withColumnRenamed("customerid", "cust_id")
   val customerDf = spark.read
     .format("csv")
     .option("header", true)
@@ -33,14 +34,12 @@ object twoDatasetJoin extends App{
     .option("path", "/Users/vigneishn/Downloads/customers-201025-223502 (1).csv")
     .load()
 
-  val joinedDf = orderDf.join(customerDf,orderDf.col("order_customer_id") === customerDf.col("customer_id"),"right").sort("order_customer_id")
+  val joinedDf = ordersNew.join(customerDf,orderDf.col("order_customer_id") === customerDf.col("customer_id"),"outer").sort("order_customer_id")
+    .select("order_id","customer_id", "customer_fname")
 
   joinedDf.show()
 
 
   scala.io.StdIn.readLine()
   spark.stop()
-
-
-
 }
