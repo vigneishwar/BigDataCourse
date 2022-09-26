@@ -33,7 +33,7 @@ object twoDatasetJoin extends App{
     .option("path", "/Users/vigneishn/Downloads/customers-201025-223502 (1).csv")
     .load()
 
-  val joinedDf = orderDf.join(customerDf,orderDf.col("order_customer_id") === customerDf.col("customer_id"),"inner")
+  val joinedDf = orderDf.join(customerDf,orderDf.col("order_customer_id") === customerDf.col("customer_id"),"right").sort("order_customer_id")
 
   joinedDf.show()
 
