@@ -44,8 +44,13 @@ object sparkSqlEx extends App {
   // spark.sql("select * from logging_table").show()
 
 
-// use collect_list() to group datetime 
-  spark.sql("select level, collect_list(datetime) from logging_table group by level order by level").show(false)
+//// use collect_list() to group datetime
+//  spark.sql("select level, collect_list(datetime) from logging_table group by level order by level").show(false)
+
+
+  // use date_format() to extract month day date 
+
+  val df2 = spark.sql("select level, date_format(datetime,'MMMM') as month from logging_table").show()
 
   scala.io.StdIn.readLine()
   spark.stop()
