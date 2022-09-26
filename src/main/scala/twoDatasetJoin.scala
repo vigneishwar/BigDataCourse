@@ -35,9 +35,9 @@ object twoDatasetJoin extends App{
     .load()
 
   val joinedDf = ordersNew.join(customerDf,orderDf.col("order_customer_id") === customerDf.col("customer_id"),"outer").sort("order_customer_id")
-    .select("order_id","customer_id", "customer_fname")
+    .select("order_id","customer_id", "customer_fname").withColumn("order_id", expr("coalesce(order_id,-1)")) // replace null values using coalesce
 
-  joinedDf.show()
+  joinedDf.show(1000)
 
 
   scala.io.StdIn.readLine()
