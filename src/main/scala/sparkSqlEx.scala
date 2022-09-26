@@ -71,9 +71,18 @@ object sparkSqlEx extends App {
       |group by level, month
       |""".stripMargin)
 
+
+
+  spark.sql(
+    """
+      |select level, date_format(datetime, 'MMMM') as month
+      |first(date_format(datetime, 'M')) as monthnum
+      |count(1) as total
+      |from my_new_log_table
+      |group by level, month
+      |order by month_in_nums
+      |""".stripMargin).show()
   
-
-
   scala.io.StdIn.readLine()
   spark.stop()
 }
